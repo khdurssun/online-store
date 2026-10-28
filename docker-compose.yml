@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: online-store-postgres
+    environment:
+      POSTGRES_USER: store_user
+      POSTGRES_PASSWORD: store_password
+      POSTGRES_DB: online_store
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
